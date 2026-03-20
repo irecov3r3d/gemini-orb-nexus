@@ -1,0 +1,8 @@
+{
+  "name": "Nexus Visual Computer",
+  "description": "A high-end glass-themed visual computer hub controlled by an interactive audio orb, featuring a suite of AI-powered mini-apps.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

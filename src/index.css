@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-glass-bg: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-glass-blur: 12px;
+  
+  --color-accent-blue: #3b82f6;
+  --color-accent-green: #10b981;
+  --color-accent-red: #ef4444;
+  --color-accent-purple: #8b5cf6;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white overflow-hidden;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl shadow-2xl;
+  }
+  
+  .glass-button {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20 rounded-xl transition-all duration-300 hover:bg-white/20 active:scale-95;
+  }
+  
+  .fiber-glow-blue {
+    box-shadow: 0 0 15px 1px rgba(59, 130, 246, 0.4);
+    border-color: rgba(59, 130, 246, 0.5);
+  }
+  
+  .fiber-glow-green {
+    box-shadow: 0 0 15px 1px rgba(16, 185, 129, 0.4);
+    border-color: rgba(16, 185, 129, 0.5);
+  }
+  
+  .fiber-glow-red {
+    box-shadow: 0 0 15px 1px rgba(239, 68, 68, 0.4);
+    border-color: rgba(239, 68, 68, 0.5);
+  }
+
+  .smoky-header {
+    @apply bg-black/40 backdrop-blur-lg border-b border-white/5;
+  }
+}
+
+@keyframes orb-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; filter: blur(8px); }
+  50% { transform: scale(1.1); opacity: 1; filter: blur(12px); }
+}
+
+.animate-orb {
+  animation: orb-pulse 4s infinite ease-in-out;
+}
+
+@keyframes fiber-run {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.fiber-edge {
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.8), transparent);
+  background-size: 200% 100%;
+  animation: fiber-run 3s infinite linear;
+}
