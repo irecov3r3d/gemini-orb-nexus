@@ -21,7 +21,7 @@ export default function App() {
   const [customApps, setCustomApps] = useState<Record<string, MiniApp>>({});
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const ALL_APPS = { ...MINI_APPS, ...customApps };
+  const ALL_APPS: Record<string, MiniApp> = { ...MINI_APPS, ...customApps };
 
   const handleTaskSubmit = useCallback(async (task: string) => {
     setIsProcessing(true);

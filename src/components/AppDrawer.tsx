@@ -50,7 +50,7 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose, onSelectA
     setTab('library');
   };
 
-  const filteredApps = Object.values(allApps).filter(app => 
+  const filteredApps = Object.values(allApps).filter((app: MiniApp) =>
     app.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
     app.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -105,7 +105,7 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose, onSelectA
                     />
                   </div>
                   <div className="grid gap-3">
-                    {filteredApps.map(app => (
+                    {filteredApps.map((app: MiniApp) => (
                       <button 
                         key={app.id}
                         onClick={() => onSelectApp(app.id)}
