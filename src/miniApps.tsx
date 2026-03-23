@@ -24,7 +24,7 @@ const MultiModelSearch = () => {
           value={query}
           onChange={e => setQuery(e.target.value)}
         />
-        <button className="glass-button px-4 py-2 text-blue-400"><Search size={16}/></button>
+        <button onClick={() => alert("Searching: " + query)} className="glass-button px-4 py-2 text-blue-400"><Search size={16}/></button>
       </div>
       <div className="flex-1 glass-panel p-3 text-xs text-white/40 overflow-auto">
         <div className="space-y-3">
@@ -77,7 +77,7 @@ const FlashUI = () => {
   return (
     <div className="grid grid-cols-2 gap-3 h-full">
       {themes.map(t => (
-        <button key={t.name} className="glass-panel p-4 flex flex-col items-center justify-center gap-2 hover:bg-white/10 transition-colors">
+        <button onClick={() => alert("Theme selected: " + t.name)} key={t.name} className="glass-panel p-4 flex flex-col items-center justify-center gap-2 hover:bg-white/10 transition-colors">
           <div className={`w-8 h-8 rounded-full ${t.color} shadow-lg`} />
           <span className="text-[10px] uppercase tracking-tighter">{t.name}</span>
         </button>
@@ -197,7 +197,7 @@ const PlaceholderApp = ({ name }: { name: string }) => (
       <Zap className="animate-pulse" />
     </div>
     <p className="text-sm font-light italic text-center">{name} is initializing...</p>
-    <button className="glass-button px-4 py-2 text-xs fiber-glow-blue text-blue-400">
+    <button onClick={() => alert("Launching " + name + " agent...")} className="glass-button px-4 py-2 text-xs fiber-glow-blue text-blue-400">
       Launch Agent
     </button>
   </div>

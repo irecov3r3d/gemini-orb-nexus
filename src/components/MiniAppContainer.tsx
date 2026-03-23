@@ -39,10 +39,10 @@ export const MiniAppContainer: React.FC<MiniAppContainerProps> = ({
           <h3 className="font-medium text-sm tracking-wide text-white/80">{title}</h3>
         </div>
         <div className="flex items-center gap-1">
-          <button className="p-1.5 text-white/30 hover:text-white transition-colors">
+          <button onClick={() => alert("Action not implemented yet.")} className="p-1.5 text-white/30 hover:text-white transition-colors">
             <RotateCcw size={14} />
           </button>
-          <button className="p-1.5 text-white/30 hover:text-white transition-colors">
+          <button onClick={() => alert("Action not implemented yet.")} className="p-1.5 text-white/30 hover:text-white transition-colors">
             <Maximize2 size={14} />
           </button>
           <button 
@@ -61,7 +61,7 @@ export const MiniAppContainer: React.FC<MiniAppContainerProps> = ({
 
       {/* Footer / Action Hints */}
       <div className="px-4 py-2 bg-white/5 flex justify-end gap-2">
-        <button className="text-[10px] uppercase tracking-widest text-white/20 hover:text-white/60 transition-colors">
+        <button onClick={() => alert("Standalone Mode not available")} className="text-[10px] uppercase tracking-widest text-white/20 hover:text-white/60 transition-colors">
           Standalone Mode
         </button>
       </div>

@@ -37,7 +37,7 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose, onSelectA
             <Wrench className="animate-pulse" />
           </div>
           <p className="text-sm font-light italic text-center">{newTitle} is ready.</p>
-          <button className="glass-button px-4 py-2 text-xs fiber-glow-blue text-blue-400">
+          <button onClick={() => alert("Executing custom logic for " + newTitle + "!")} className="glass-button px-4 py-2 text-xs fiber-glow-blue text-blue-400">
             Execute Custom Logic
           </button>
         </div>

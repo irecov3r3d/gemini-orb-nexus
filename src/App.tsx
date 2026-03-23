@@ -130,10 +130,10 @@ export default function App() {
                 <button onClick={() => setIsDrawerOpen(true)} className="glass-button p-2.5 text-white/60 hover:text-blue-400" title="App Library">
                   <LayoutGrid size={20} />
                 </button>
-                <button className="glass-button p-2.5 text-white/60 hover:text-purple-400">
+                <button onClick={() => alert("Layers feature coming soon")} className="glass-button p-2.5 text-white/60 hover:text-purple-400">
                   <Layers size={20} />
                 </button>
-                <button className="glass-button p-2.5 text-white/60">
+                <button onClick={() => alert("Settings coming soon")} className="glass-button p-2.5 text-white/60">
                   <Settings size={20} />
                 </button>
               </div>
@@ -192,9 +192,9 @@ export default function App() {
           </div>
           <div className="h-4 w-[1px] bg-white/10 shrink-0" />
           <div className="flex gap-4 md:gap-6 shrink-0">
-            <button className="text-[10px] md:text-xs uppercase tracking-widest text-white/40 hover:text-white transition-colors">Sequential</button>
-            <button className="text-[10px] md:text-xs uppercase tracking-widest text-white/40 hover:text-white transition-colors">Parallel</button>
-            <button className="text-[10px] md:text-xs uppercase tracking-widest text-blue-400 font-bold">Auto-Optimize</button>
+            <button onClick={() => alert("Sequential execution mode toggled")} className="text-[10px] md:text-xs uppercase tracking-widest text-white/40 hover:text-white transition-colors">Sequential</button>
+            <button onClick={() => alert("Parallel execution mode toggled")} className="text-[10px] md:text-xs uppercase tracking-widest text-white/40 hover:text-white transition-colors">Parallel</button>
+            <button onClick={() => alert("Auto-Optimize active")} className="text-[10px] md:text-xs uppercase tracking-widest text-blue-400 font-bold">Auto-Optimize</button>
           </div>
         </motion.div>
       )}
