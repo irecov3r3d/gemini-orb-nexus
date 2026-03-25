@@ -21,7 +21,7 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose, onSelectA
 
   const handleCreate = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newTitle.trim()) return;
+    if (!newTitle.trim() || !newDesc.trim()) return;
     
     const id = newTitle.toLowerCase().replace(/\s+/g, '-');
     
@@ -50,7 +50,7 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose, onSelectA
     setTab('library');
   };
 
-  const filteredApps = Object.values(allApps).filter(app => 
+  const filteredApps =  (Object.values(allApps) as MiniApp[]).filter(app =>
     app.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
     app.description.toLowerCase().includes(searchQuery.toLowerCase())
   );

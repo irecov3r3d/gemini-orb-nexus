@@ -34,7 +34,7 @@ export default function App() {
     }
 
     // 1. Determine apps
-    const availableAppsList = Object.values(ALL_APPS).map(a => `- ${a.id}: ${a.title} - ${a.description}`).join('\n');
+    const availableAppsList =  (Object.values(ALL_APPS) as MiniApp[]).map(a => `- ${a.id}: ${a.title} - ${a.description}`).join('\n');
     const appIds = await geminiService.determineApps(task, availableAppsList);
     
     // 2. Generate response speech

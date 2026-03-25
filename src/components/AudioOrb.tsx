@@ -79,7 +79,7 @@ export const AudioOrb: React.FC<AudioOrbProps> = ({ onTaskSubmit, isProcessing, 
     <div className="relative flex flex-col items-center justify-center h-full w-full">
       {/* The Orb */}
       <motion.div
-        layoutId="orb"
+        layoutId="orb" id="orb"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onClick={onOrbClick}
