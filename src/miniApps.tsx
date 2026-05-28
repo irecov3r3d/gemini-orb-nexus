@@ -24,7 +24,7 @@ const MultiModelSearch = () => {
           value={query}
           onChange={e => setQuery(e.target.value)}
         />
-        <button className="glass-button px-4 py-2 text-blue-400"><Search size={16}/></button>
+        <button aria-label="Search" className="glass-button px-4 py-2 text-blue-400"><Search size={16}/></button>
       </div>
       <div className="flex-1 glass-panel p-3 text-xs text-white/40 overflow-auto">
         <div className="space-y-3">
@@ -167,6 +167,7 @@ const LinkToInk = () => {
           onChange={e => setRepo(e.target.value)}
         />
         <button 
+          aria-label="Analyze Repository"
           onClick={handleAnalyze}
           className="glass-button px-4 py-2 text-purple-400"
         >
