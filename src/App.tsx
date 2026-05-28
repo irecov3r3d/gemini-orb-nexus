@@ -34,7 +34,7 @@ export default function App() {
     }
 
     // 1. Determine apps
-    const availableAppsList = Object.values(ALL_APPS).map(a => `- ${a.id}: ${a.title} - ${a.description}`).join('\n');
+    const availableAppsList = Object.values<MiniApp>(ALL_APPS).map(a => `- ${a.id}: ${a.title} - ${a.description}`).join('\n');
     const appIds = await geminiService.determineApps(task, availableAppsList);
     
     // 2. Generate response speech
@@ -127,13 +127,13 @@ export default function App() {
               </div>
 
               <div className="flex items-center gap-3">
-                <button onClick={() => setIsDrawerOpen(true)} className="glass-button p-2.5 text-white/60 hover:text-blue-400" title="App Library">
+                <button aria-label="Open App Library" onClick={() => setIsDrawerOpen(true)} className="glass-button p-2.5 text-white/60 hover:text-blue-400" title="App Library">
                   <LayoutGrid size={20} />
                 </button>
-                <button className="glass-button p-2.5 text-white/60 hover:text-purple-400">
+                <button aria-label="View Layers" className="glass-button p-2.5 text-white/60 hover:text-purple-400">
                   <Layers size={20} />
                 </button>
-                <button className="glass-button p-2.5 text-white/60">
+                <button aria-label="Settings" className="glass-button p-2.5 text-white/60">
                   <Settings size={20} />
                 </button>
               </div>

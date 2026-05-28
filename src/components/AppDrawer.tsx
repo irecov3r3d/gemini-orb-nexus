@@ -50,7 +50,7 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose, onSelectA
     setTab('library');
   };
 
-  const filteredApps = Object.values(allApps).filter(app => 
+  const filteredApps = Object.values<MiniApp>(allApps).filter(app =>
     app.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
     app.description.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -71,7 +71,7 @@ export const AppDrawer: React.FC<AppDrawerProps> = ({ isOpen, onClose, onSelectA
           >
             <div className="p-6 border-b border-white/10 flex items-center justify-between">
               <h2 className="text-xl font-semibold text-white">App Library</h2>
-              <button onClick={onClose} className="p-2 text-white/50 hover:text-white transition-colors rounded-lg hover:bg-white/5">
+              <button aria-label="Close App Library" onClick={onClose} className="p-2 text-white/50 hover:text-white transition-colors rounded-lg hover:bg-white/5">
                 <X size={20} />
               </button>
             </div>
