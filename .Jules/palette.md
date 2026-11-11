@@ -1,0 +1,3 @@
+## 2024-05-18 - Missing ARIA Labels on Icon-Only Buttons
+**Learning:** Icon-only buttons (like those found in headers, sidebars, or toolbars) are frequently missed in accessibility checks. When using components that consist only of an SVG icon (e.g., Lucide React icons inside buttons), a screen reader will read the element as just "button" without providing any context to visually impaired users. This was observed broadly across our application's header and mini-app components.
+**Action:** Always ensure that `<button>` tags without text content have descriptive `aria-label` or `aria-labelledby` attributes that clearly explain the button's action. This should be added to our standard review checklist for all new components.

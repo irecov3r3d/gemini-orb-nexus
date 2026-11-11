@@ -118,20 +118,20 @@ export const AudioOrb: React.FC<AudioOrbProps> = ({ onTaskSubmit, isProcessing, 
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="What are we working on today?"
+              aria-label="Task input" placeholder="What are we working on today?"
               className="w-full glass-panel px-6 py-4 pr-16 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-lg placeholder:text-white/30"
             />
             <div className="absolute right-2 top-1/2 -translate-y-1/2 flex gap-2">
               <button
                 type="button"
                 onClick={toggleListening}
-                className={`p-2 rounded-lg transition-colors ${isListening ? 'text-red-400 bg-red-400/10' : 'text-white/40 hover:text-white'}`}
+                aria-label={isListening ? "Stop listening" : "Start listening"} className={`p-2 rounded-lg transition-colors ${isListening ? 'text-red-400 bg-red-400/10' : 'text-white/40 hover:text-white'}`}
               >
                 {isListening ? <MicOff size={20} /> : <Mic size={20} />}
               </button>
               <button
                 type="submit"
-                disabled={!input.trim() || isProcessing}
+                aria-label="Submit task" disabled={!input.trim() || isProcessing}
                 className="p-2 glass-button text-blue-400 disabled:opacity-50"
               >
                 <Send size={20} />

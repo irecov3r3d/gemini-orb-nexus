@@ -39,13 +39,14 @@ export const MiniAppContainer: React.FC<MiniAppContainerProps> = ({
           <h3 className="font-medium text-sm tracking-wide text-white/80">{title}</h3>
         </div>
         <div className="flex items-center gap-1">
-          <button className="p-1.5 text-white/30 hover:text-white transition-colors">
+          <button aria-label="Reload" className="p-1.5 text-white/30 hover:text-white transition-colors">
             <RotateCcw size={14} />
           </button>
-          <button className="p-1.5 text-white/30 hover:text-white transition-colors">
+          <button aria-label="Maximize" className="p-1.5 text-white/30 hover:text-white transition-colors">
             <Maximize2 size={14} />
           </button>
           <button 
+            aria-label="Close app"
             onClick={onClose}
             className="p-1.5 text-white/30 hover:text-red-400 transition-colors"
           >
